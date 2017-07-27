@@ -16,7 +16,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
 
 
 # fit model to training data
-#gbc = MLPClassifier(hidden_layer_sizes=[100],solver='lbfgs',activation='relu',random_state=0,alpha=.015).fit(X_train,y_train) #.7894
+gbc = MLPClassifier(hidden_layer_sizes=[100],solver='lbfgs',activation='relu',random_state=0,alpha=.015).fit(X_train,y_train) #.7894
 
 # predict labels test set
 y_pred = gbc.predict(X_test)
