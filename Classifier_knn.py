@@ -35,3 +35,17 @@ print('Accuracy training data: {:.2f}'.format( gbc.score(X_train,y_train)))
 print('Accuracy testing data: {:.2f}'.format( gbc.score(X_test,y_test)))
 print(y_test.values)
 print(y_pred)
+
+
+
+##Plot feature imporances
+objects = X_train.columns.values
+y_pos = np.arange(len(objects))
+performance = gbc.feature_importances_
+performance, objects = (list(t) for t in zip(*sorted(zip(performance, objects))))
+plt.bar(y_pos, performance, align='center', alpha=1)
+
+plt.xticks(y_pos, objects,rotation='vertical')
+plt.ylabel('Percentage')
+plt.title('Importancy Features')
+plt.show()
